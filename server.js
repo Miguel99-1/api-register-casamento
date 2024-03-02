@@ -28,6 +28,13 @@ app.use(cors());  // Adicione esta linha
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', (req, res) => {
+  return res.json('hello world');
+});
+
+app.get('/users', (req, res) => {
+  return res.json('users');
+});
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
     console.log('Tentativa de login:', email);
